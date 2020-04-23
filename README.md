@@ -17,10 +17,12 @@ After selecting the city the user can filter by month and/or day of the week if 
 
     - Information about the users including how many are subscribers, and if New York City or Chicago are selected, gender, and age data (earliest birth year, latest birth year, and most common birth year)
 
-After displaying these data the user has the option to view the filtered raw data five lines at a time. 
+After displaying these data the user has the option to view the filtered raw data five lines at a time.
 
 ### Files used
 This project consists of bikeshare.py and three precleaned data files provided by Udacity: chicago.csv, new_york_city.csv, and washington.csv.
+
+This project was tested with Python 3.5.6, Numpy 1.13.3, and Pandas 0.22.0.
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
