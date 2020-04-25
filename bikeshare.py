@@ -86,7 +86,15 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df, month, day):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing filtered bike share data 
+        (str) month - month of filter by, or "all" 
+                      (used to determine if most popular month is appropriate) 
+        (str) day - day of week of filter by, or "all"
+                    (used to determine if most popular day is appropriate)
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
