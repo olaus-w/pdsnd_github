@@ -174,7 +174,12 @@ def trip_duration_stats(df):
 
 
 def user_stats(df,city):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
+    Args:
+        (str) city - name of city being analyzed, used to determine which data is available 
+        (Pandas DataFrame) df - DataFrame containing filtered bike share data 
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -184,7 +189,7 @@ def user_stats(df,city):
     print('User type counts for this data query are as follows:\n', user_types)
 
     # Display counts of gender
-# check for data present, breaks on Washington
+    # check for data present, breaks on Washington
     if city != 'washington':
         user_genders = pd.Series.value_counts(df['Gender'])
         print('User gender counts for this data set are as follows:\n', user_genders)
