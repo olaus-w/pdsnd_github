@@ -124,7 +124,11 @@ def time_stats(df, month, day):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trip.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing filtered bike share data 
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
