@@ -153,7 +153,11 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """
+    Displays statistics on the total and average trip duration.
+    Args:
+        (Pandas DataFrame) df - DataFrame containing filtered bike share data 
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
