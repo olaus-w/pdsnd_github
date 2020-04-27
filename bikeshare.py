@@ -210,7 +210,11 @@ def user_stats(df,city):
     print('-'*40)
 
 def disp_raw_data(df):
-    """Displays the raw data 5 lines at a time as requested by user"""
+    """
+    Displays the raw data 5 lines at a time as requested by user
+    Args:
+        (Pandas DataFrame) df - DataFrame containing filtered bike share data 
+    """
     prompt = input('Would you like to see the raw data five rows at a time ("yes" or "no")?')
     if prompt == 'yes':
         print(df.shape)
