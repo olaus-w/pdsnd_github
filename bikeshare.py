@@ -188,15 +188,15 @@ def user_stats(df,city):
 
 def disp_raw_data(df):
     """Displays the raw data 5 lines at a time as requested by user"""
-    prompt = input('Would you like to see the raw data five rows at a time ("yes" or "no")?')
+    prompt = input('Would you like to see the raw data five rows at a time ("yes" to view, any other text will skip this section)?')
     if prompt == 'yes':
         print(df.shape)
         i = 0
         while i < df.shape[0]:
             print(df.iloc[i: i + 5])
-            more = input('If you are finished viewing the raw date type "no"')
+            more = input('If you are finished viewing the raw date type "q"')
             i += 5
-            if more.lower() == 'no':
+            if more.lower() == 'q':
                 break
 
 
@@ -210,7 +210,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df,city)
         disp_raw_data(df)
-        restart = input('\nIf you would like to restart enter "yes", any other text will exit. :\n')
+        restart = input('\nIf you would like to restart enter "yes", any other text will trigger exit. :\n')
         if restart.lower() != 'yes':
             break
 
