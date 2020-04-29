@@ -25,4 +25,4 @@ This project consists of bikeshare.py and three precleaned data files provided b
 This project was tested with Python 3.5.6, Numpy 1.13.3, and Pandas 0.22.0.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+This project was based on templates provided in the Udacity Programming for Data Science course.
