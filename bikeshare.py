@@ -67,7 +67,7 @@ def load_data(city, month, day):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     #add columns for filters to match on
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.day_name()
+    df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
 
     #filter by month and day if not all
@@ -142,11 +142,9 @@ def station_stats(df):
     print('The most popular station to end a trip at is {}'.format(popular_end_station))
 
     # display most frequent combination of start station and end station trip
-    df['Round Trip'] = df['Start Station'] + ' to ' + df['End Station']
-    popular_trip = df['Round Trip'].mode()[0]
+    df['Start and End'] = df['Start Station'] + ' to ' + df['End Station']
+    popular_trip = df['Start and End'].mode()[0]
     print('The most frequent start and stop station combination is {}'.format(popular_trip))
-
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -215,15 +213,17 @@ def disp_raw_data(df):
     Args:
         (Pandas DataFrame) df - DataFrame containing filtered bike share data 
     """
-    prompt = input('Would you like to see the raw data five rows at a time ("yes" or "no")?')
+    
+    prompt = input('Would you like to see the raw data five rows at a time ("yes" to view, any other text will skip this section)?')
+
     if prompt == 'yes':
         print(df.shape)
         i = 0
         while i < df.shape[0]:
             print(df.iloc[i: i + 5])
-            more = input('If you are finished viewing the raw date type "no"')
+            more = input('If you are finished viewing the raw date type "q"')
             i += 5
-            if more.lower() == 'no':
+            if more.lower() == 'q':
                 break
 
 
@@ -237,7 +237,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df,city)
         disp_raw_data(df)
-        restart = input('\nIf you would like to restart enter "yes", any other text will exit. :\n')
+        restart = input('\nIf you would like to restart enter "yes", any other text will trigger exit. :\n')
         if restart.lower() != 'yes':
             break
 
